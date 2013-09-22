@@ -1,0 +1,18 @@
+﻿@model MvcPaging.Models.PostViewModel
+
+@foreach (var post in Model.Posts)
+{
+    <div class="post-entry" id="@string.Format("post-{0}", post.PostId)">
+        <div>
+            <div class="pull-left" title="@post.PostTitle">
+                @post.PostTitle
+            </div>
+            <div class="pull-right" style="color: #BDBDBD">
+                <b>@post.Category</b>
+            </div>
+        </div>
+        <br/><br/><br/>
+        @Html.ActionLink("View", "ViewPost", "Details", new { questionId = post.PostId }, new { @class = "btn btn-primary" })
+    </div>
+    <hr/>
+}

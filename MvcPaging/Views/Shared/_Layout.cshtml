@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MVC Paging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      .btn-more {
+          width: 100%
+      }
+
+      #moreBtnImg {
+          display: none; 
+          width: 12px; 
+          height: 12px
+      }
+    </style>
+    <link href="@Url.Content("~/Content/bootstrap-responsive.css")" rel="stylesheet">
+  </head>
+
+  <body>
+      
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+    <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="@Url.Action("Index","Home")">Paging</a>
+        <div class="nav-collapse collapse">
+        <ul class="nav">
+            <li class="active">@Html.ActionLink("Home","Index","Home")</li>
+            <li>@Html.ActionLink("Pure MVC Paging", "Index", "MvcPaging")</li>
+            <li>@Html.ActionLink("Mustache Paging", "Index", "MustachePaging")</li>            
+        </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    @RenderBody()
+
+    <hr />
+        
+
+    <footer>
+    <p>&copy; Company 2013</p>
+    </footer>
+
+</div> <!-- /container -->
+
+      <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="@Url.Content("~/Scripts/jquery-2.0.3.js")"></script>
+      <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>    
+      <script type="text/javascript">
+          var siteRoot = '@Url.Content("~/")';
+      </script>
+      @RenderSection("pageScripts", false)
+  </body>
+</html>

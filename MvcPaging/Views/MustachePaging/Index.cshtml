@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section pageScripts
+{
+    @Scripts.Render("~/bundles/paging-mustache")
+}
+
+@{
+    Html.RenderAction("PostsPartial", "MustachePaging");
+}

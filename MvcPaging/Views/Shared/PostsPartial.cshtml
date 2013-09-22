@@ -1,0 +1,17 @@
+﻿@model MvcPaging.Models.PostViewModel
+
+<div id="content">
+    @Html.Partial("PostDisplayer", Model)
+</div>
+
+<div id="placeholder">
+    
+</div>
+
+<div>
+    <a class="btn btn-more" id="moreBtn">
+        More&nbsp;<img id="moreBtnImg" src="@Url.Content("~/Content/images/loading.gif")" alt="loading..."/>
+    </a>
+</div>
+
+<input type="hidden" id="currentPage" name="currentPage" value="1"/>
